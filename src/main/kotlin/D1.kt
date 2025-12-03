@@ -3,13 +3,13 @@ package fr.kohrs
 import kotlin.math.abs
 
 fun main() {
-    val day1Input = Utils.getInput(2025, 1)
-    println("Loaded ${day1Input.size} entries from resources")
+    val input = Utils.getInput(2025, 1)
+    println("Loaded ${input.size} entries from resources")
     var currNum = 50
     var zeros = 0
     var stopsOnZeros = 0
     println("The dial starts pointing at $currNum")
-    day1Input.forEach { it ->
+    input.forEach { it ->
         val direction = it.substring(0, 1)
         val distance = when (direction) {
             "L" -> - it.substring(1).toInt()
