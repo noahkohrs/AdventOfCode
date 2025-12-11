@@ -7,7 +7,7 @@ object Utils {
         val input = object {}.javaClass.getResource(fileName)?.readText()
             ?: throw IllegalArgumentException("Input file $fileName not found in resources")
         return when (strategy) {
-            Strategy.LINES_SPACED -> input.lines().filter { it.isNotBlank() }
+            Strategy.LINES_SPACED -> input.lines()
             Strategy.ONE_LINE_COMMA_SEPARATED -> input.split(",").map { it.trim() }.filter { it.isNotBlank() }
         }
     }
